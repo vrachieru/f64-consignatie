@@ -39,7 +39,8 @@ class Database():
 		return None
 
 	def addProduct(self, product):
-		self._data.append({ 'code' : product.code, 'title' : product.title, 'price' : { now() : product.price }, 'url' : product.url})
+		self._data.append({ 'code' : product.code, 'title' : product.title, 
+			'price' : { now() : product.price }, 'url' : product.url})
 
 	def addPrice(self, productCode, newPrice):
 		for item in self._data:
@@ -48,4 +49,3 @@ class Database():
 
 	def getLatestPrice(self, prices):
 		return sorted(prices.items())[-1][1]
-
