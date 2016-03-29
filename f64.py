@@ -35,7 +35,7 @@ class F64():
 	def parseProduct(self, product):
 		title = self.parseProductTitle(product)
 		code = self.parseProductCode(product)
-		price = self.parseProductTitle(product)
+		price = self.parseProductPrice(product)
 		url = self.parseProductUrl(product)
 		return Product(title, code, price, url)
 
