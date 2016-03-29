@@ -1,8 +1,8 @@
 {
     "twitter": {
-        "consumerKey": "XDSG3YVohJGRNwlNNB7I2a5Ud",
-        "consumerSecret": "0TUc90W3P5s57B0cihgPSOHqDPKnvBC982VupM4OIIms8G6QHZ",
-        "accessToken": "714111291309367296-NQo0kOVRYMRPH2R4JN9bG8MvhzU05vh",
-        "accessTokenSecret": "tLIeGkuN9jUr1vkftHDbUFwIpNSyThwKEHkxpY8UyY6rM"
+        "consumerKey": "",
+        "consumerSecret": "",
+        "accessToken": "",
+        "accessTokenSecret": ""
     }
 }
