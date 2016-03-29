@@ -1,5 +1,7 @@
 # [@F64Consignatie](https://twitter.com/F64Consignatie)
 
+[![Twitter Follow](https://img.shields.io/twitter/follow/F64Consignatie.svg?style=social)]()
+
 ```This is NOT in any way an official F64 or Twitter product.```
 
 A twitter bot (**[@F64Consignatie](https://twitter.com/F64Consignatie)**) that keeps a watchful eye on the [used photo gear](http://www.f64.ro/echipament-foto-folosit-consignatie.html) (watching all their suff is just too much) sold by [F64](http://www.f64.ro).
