@@ -12,7 +12,7 @@ Since I use Twitter as a source of information and have little time to check pho
 
 ## Installation
 
-1. Download the [latest release](https://github.com/andygrunwald/TrendingGithub/releases/latest)
+1. Download the [latest release](https://github.com/vrachieru/f64-consignatie/releases/latest)
 2. Extract the archive (zip / tar.gz)
 3. Install the requirements: `pip install -r requirements.txt`
 4. Fill out the configuration file with your twitter info
