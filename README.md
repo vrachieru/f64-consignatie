@@ -17,3 +17,7 @@ Since I use Twitter as a source of information and have little time to check pho
 3. Install the requirements: `pip install -r requirements.txt`
 4. Fill out the configuration file with your twitter info
 5. Start the bot: `python main.py`
+
+## License
+
+This project is released under the terms of the [MIT license](http://en.wikipedia.org/wiki/MIT_License).
