@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from f64 import Product
 from json import load, dumps
 from os.path import isfile
 from utils import now
@@ -27,25 +28,24 @@ class Database():
 		with open(databaseFile, 'w+') as data:
 			data.write(dumps(self._data, sort_keys=True, indent=4))
 
-	def productExists(self, product):
-		return (True, False)[self.getProduct(product) == None]
+	def productExists(self, productCode):
+		return (True, False)[self.getProduct(productCode) == None]
 
-	def getProduct(self, product):
+	def getProduct(self, productCode):
 		for item in self._data:
-			if item['product'] == product:
-				return item
+			if item['code'] == productCode:
+				price = self.getLatestPrice(item['price'])
+				return Product(item['code'], item['title'], price, item['url'])
 		return None
 
-	def addProduct(self, code, title, price, url):
-		self._data.append({ 'product' : code, 'title' : title, 'price' : { now() : price }, 'url' : url})
+	def addProduct(self, product):
+		self._data.append({ 'code' : product.code, 'title' : product.title, 'price' : { now() : product.price }, 'url' : product.url})
 
-	def updatePrice(self, product, title, price, url):
-		latestPrice = self.getLatestPrice(product)
-		if latestPrice != price:
-			self.addNewPrice(product, price)
+	def addPrice(self, productCode, newPrice):
+		for item in self._data:
+			if item['code'] == productCode:
+				item['price'].update({ now() : newPrice })
 
-	def getLatestPrice(self, product):
-		return sorted(self.getProduct(product)['price'].items())[-1][1]
+	def getLatestPrice(self, prices):
+		return sorted(prices.items())[-1][1]
 
-	def addNewPrice(self, product, price):
-		self.getProduct(product)['price'].update({ now() : price })
