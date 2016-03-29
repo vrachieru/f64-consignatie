@@ -7,4 +7,5 @@ logFile = "log"
 class Logger():
 	def write(self, data):
 		with open(logFile, "a+") as f:
-			f.write("%s: %s\n" % (now(), data))
+			msg = "%s: %s\n" % (now(), data)
+			f.write(msg.encode('utf-8'))

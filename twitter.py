@@ -9,5 +9,5 @@ class Twitter():
 		self._api = API(auth)
 
 	def tweet(self, message):
-		self._api.update_status(message)
+		self._api.update_status(message.encode('utf-8'))
  
