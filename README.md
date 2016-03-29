@@ -16,7 +16,9 @@ Since I use Twitter as a source of information and have little time to check pho
 2. Extract the archive (zip / tar.gz)
 3. Install the requirements: `pip install -r requirements.txt`
 4. Fill out the configuration file with your twitter info
-5. Start the bot: `python main.py`
+5. Create a cron job to run the bot at a certain interval  
+`crontab -l | { cat; echo "0 */2 * * * python /home/pi/f64/main.py"; } | crontab -`
+
 
 ## License
 
