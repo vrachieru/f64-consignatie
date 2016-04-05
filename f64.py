@@ -40,16 +40,22 @@ class F64():
     return Product(title, code, price, url)
 
   def parseProductUrl(self, product):
-    return product.xpath('.//td[@class="product_title"]//a/@href')[0]
+    return self.parseElement(product, './/td[@class="product_title"]//a/@href')
 
   def parseProductTitle(self, product):
-    return product.xpath('.//h2/text()')[0]
+    return self.parseElement(product, './/h2/text()')
 
   def parseProductCode(self, product):
-    return product.xpath('.//div[@class="stars_cod_product"]//b/text()')[0]
+    return self.parseElement(product, './/div[@class="stars_cod_product"]//b/text()')
 
   def parseProductPrice(self, product):
-    return product.xpath('.//span[@class="price_list_int"]/text()')[0] + "," + product.xpath('.//sup[@class="price_list_dec"]/text()')[0] + " " + product.xpath('.//span[@class="price_list_currency"]/text()')[0]
+    return self.parseElement(product, './/span[@class="price_list_int"]/text()') + "," + self.parseElement(product, './/sup[@class="price_list_dec"]/text()') + " " + self.parseElement(product, './/span[@class="price_list_currency"]/text()')
+
+  def parseElement(self, product, xpath, default = ""):
+    try:
+    	return product.xpath(xpath)[0]
+    except:
+    	return default
 
 
 class Product():
