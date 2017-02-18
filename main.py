@@ -1,11 +1,12 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 from configuration import Configuration
 from twitter import Twitter
 from database import Database
 from f64 import F64
 from logger import Logger
+from utils import number
 
 TAGS     = "#f64"
 
@@ -24,7 +25,7 @@ def addProduct(product):
 
 def updateProduct(product, oldPrice):
   database.addPrice(product.code, product.price)
-  symbol = (u"↗", u"↘")[oldPrice > product.price]
+  symbol = (u"↗", u"↘")[number(oldPrice) > number(product.price)]
   twitter.tweet("%s @ %s %s %s %s %s" %
     (product.title, oldPrice, symbol, product.price, product.url, TAGS))
   log.write("%s @ %s %s %s" %
