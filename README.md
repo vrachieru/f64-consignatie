@@ -9,7 +9,7 @@ A twitter bot (**[@F64Consignatie](https://twitter.com/F64Consignatie)**) that k
 
 ## Motivation
 
-Being a shutterbug myself I like the chance to take advantage of great photography gear deals but have little lime to check websites like this on a daily basis. I also like to develop shiny new things.  
+Being a shutterbug myself I like the chance to take advantage of great photography gear deals but have little lime to check websites like this on a daily basis. I also like to develop shiny new things.
 Since I use Twitter as a source of information and have little time to check photo gear sellers on a daily basis why not combine both to save time?!
 
 ## Installation
@@ -18,17 +18,17 @@ Since I use Twitter as a source of information and have little time to check pho
 2. Extract the archive (zip / tar.gz)
 3. Install the requirements: `pip install -r requirements.txt`
 4. Fill out the configuration file with your twitter info
-5. Create a cron job to run the bot at a certain interval  
+5. Create a cron job to run the bot at a certain interval
 `crontab -l | { cat; echo "0 * * * * cd /home/pi/f64; python main.py"; } | crontab -`
 
 ## Todo
 
-- [ ] Add error handling
-- [ ] Process product titles to remove useless data
+- [x] Add error handling
+- [x] Process product titles to remove useless data
 - [ ] Add auto-follow feature to spread awareness
-- [ ] Drop dependency to cron
+- [ ] ~~Drop dependency to cron~~
 - [ ] Use a real database when things get big
-- [ ] Add functionality to track product status (in stock/out of stock/etc)
+- [ ] ~~Add functionality to track product status (in stock/out of stock/etc)~~
 
 ## License
 
